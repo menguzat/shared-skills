@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "performanceMedianMin": 95,
+    "lcpMsMax": 2500,
+    "tbtMsMax": 200,
+    "clsMax": 0.1
+  },
+  "routes": {
+    "home": {
+      "jsTransferBytesMax": 250000,
+      "totalTransferBytesMax": 1500000
+    }
+  }
+}

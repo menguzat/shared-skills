@@ -1,0 +1,20 @@
+id: unique-case-id
+intent: "What the user wants"
+preconditions:
+  - "Relevant domain/application state"
+user_input: "Representative natural-language input"
+expected_invariants:
+  - "No unsupported capability is fabricated"
+  - "Required approval occurs before mutation"
+  - "User-visible state matches authoritative system state"
+allowed_surface_types:
+  - "text"
+  - "approval"
+forbidden_behaviors:
+  - "claim success before tool confirmation"
+  - "discard user edits"
+metrics:
+  - task_success
+  - turns
+  - articulation_cost
+  - correction_count

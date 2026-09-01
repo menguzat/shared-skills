@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent-Native App Architecture"
+  short_description: "Design and migrate apps for agent-native interaction"
+  default_prompt: "Use $agent-native-app-architecture to redesign this product around intent, capabilities, shared state, agent orchestration, and just-in-time UI."

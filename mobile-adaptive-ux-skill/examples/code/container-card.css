@@ -1,0 +1,26 @@
+.result-container {
+  container: result / inline-size;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.75rem;
+}
+
+.result-card__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@container result (min-width: 36rem) {
+  .result-card {
+    grid-template-columns: 7rem minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .result-card__actions {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agent-native/ui-intent.schema.json",
+  "title": "Agent-Native UI Intent",
+  "type": "object",
+  "required": ["purpose", "taskId", "surfaceType", "persistence", "actions"],
+  "properties": {
+    "purpose": { "type": "string", "minLength": 1 },
+    "taskId": { "type": "string", "minLength": 1 },
+    "surfaceType": {
+      "enum": ["text", "inline-card", "form", "table", "map", "timeline", "approval", "workspace", "custom"]
+    },
+    "persistence": { "enum": ["ephemeral", "thread", "project", "durable"] },
+    "stateBindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "mode"],
+        "properties": {
+          "path": { "type": "string" },
+          "mode": { "enum": ["read", "read-write"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "consequence"],
+        "properties": {
+          "id": { "type": "string" },
+          "consequence": {
+            "enum": ["read_only", "reversible_local_write", "external_write", "financial_commitment", "destructive", "sensitive_high_stakes"]
+          },
+          "requiresConfirmation": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "fallback": {
+      "type": "object",
+      "properties": {
+        "mode": { "enum": ["text", "fixed-ui", "workspace", "human-handoff"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

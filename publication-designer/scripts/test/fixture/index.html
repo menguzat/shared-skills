@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publication Designer self-test</title>
+  <style>
+    @font-face { font-family: "Manrope"; src: url("./assets/Manrope.ttf") format("truetype"); font-weight: 400 800; }
+    @page { size: 148mm 210mm; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #d7d5d0; font-family: "Manrope", sans-serif; color: #173c35; }
+    body { display: grid; justify-content: center; gap: 24px; }
+    .page { position: relative; width: 148mm; height: 210mm; overflow: hidden; background: #f7f2e9; break-after: page; }
+    .safe { position: absolute; inset: 15mm 14mm 14mm; }
+    .eyebrow { margin: 0 0 4mm; font-size: 9px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, p { margin: 0; }
+    h1 { max-width: 90mm; font-size: 40px; line-height: .98; letter-spacing: -.045em; }
+    .cover-copy { margin-top: 8mm; width: 70mm; font-size: 14px; line-height: 1.5; }
+    .cover-figure { position: absolute; right: 0; bottom: 0; width: 84mm; border-radius: 24mm 0 0 0; }
+    .folio { position: absolute; left: 14mm; bottom: 10mm; font-size: 9px; font-weight: 700; }
+    .chapter { display: grid; grid-template-columns: 39mm 1fr; gap: 11mm; padding-top: 14mm; }
+    .marker { width: 39mm; height: 54mm; border-radius: 20mm 20mm 6mm 6mm; background: #d17a5d; display: grid; place-items: center; color: #fff; font-size: 28px; font-weight: 800; }
+    h2 { font-size: 31px; line-height: 1.04; letter-spacing: -.035em; }
+    .prose { margin-top: 7mm; font-size: 13px; line-height: 1.55; max-width: 68mm; }
+    .callout { margin-top: 12mm; padding: 6mm; border: 1px solid #8fa59e; border-radius: 4mm; font-size: 11px; line-height: 1.45; }
+    a { color: inherit; font-weight: 800; text-underline-offset: 3px; }
+    @media print { html, body { background: transparent; gap: 0; } }
+  </style>
+</head>
+<body>
+  <section class="page" data-content-id="cover">
+    <div class="safe" data-safe="cover-copy">
+      <p class="eyebrow">Field notes · 01</p>
+      <h1 class="heading">A quiet system for bold pages</h1>
+      <p class="cover-copy prose" data-source-id="cover-copy">A compact fixture that proves the publication pipeline without pretending to judge taste by numbers alone.</p>
+    </div>
+    <img class="cover-figure" data-asset-id="cover-figure" src="./assets/figure.svg" alt="Abstract green and terracotta composition">
+    <span class="folio">01</span>
+  </section>
+  <section class="page" data-content-id="chapter-01">
+    <div class="safe chapter" data-safe="chapter">
+      <div class="marker">02</div>
+      <div>
+        <p class="eyebrow">Method</p>
+        <h2 class="chapter-heading">Evidence before release</h2>
+        <p class="prose chapter-prose" data-source-id="chapter-copy">Browser geometry, PDF structure, and independent raster parity answer different questions. A mature review keeps those layers separate.</p>
+        <p class="callout">Read the canonical example at <a href="https://example.com/">example.com</a>.</p>
+      </div>
+    </div>
+    <span class="folio">02</span>
+  </section>
+</body>
+</html>

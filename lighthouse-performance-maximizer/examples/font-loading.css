@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Brand Sans";
+  src: url("/fonts/brand-sans-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Evaluate metric-compatible fallback and size-adjust for the real font. */
+body {
+  font-family: "Brand Sans", system-ui, sans-serif;
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title">
+  <title id="title">Abstract editorial balance study</title>
+  <rect width="800" height="900" rx="80" fill="#dbe7df"/>
+  <circle cx="520" cy="300" r="210" fill="#d17a5d"/>
+  <path d="M80 760C220 470 370 430 710 680V900H80Z" fill="#173c35"/>
+  <path d="M120 700C270 530 400 570 650 720" fill="none" stroke="#f5eee1" stroke-width="24" stroke-linecap="round"/>
+</svg>

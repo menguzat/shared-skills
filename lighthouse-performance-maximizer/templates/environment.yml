@@ -1,0 +1,15 @@
+experiment_id: BASELINE-001
+date: YYYY-MM-DD
+git_revision: unknown
+working_tree_dirty: false
+build_command: "npm run build"
+serve_command: "npm run preview"
+base_url: "http://localhost:4173"
+lighthouse_version: "record from report"
+chrome_version: "record"
+os_runner: "record"
+throttling_method: "simulate"
+auth_state: "anonymous"
+consent_state: "default"
+feature_flags: []
+notes: ""

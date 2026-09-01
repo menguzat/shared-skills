@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "transcript-regression-fixtures-v1",
+  "fixtures": [
+    {
+      "id": "oldskool-2026-07-23-cem-mengu",
+      "sourceRepoPath": "oldskool/conversations/2026-07-23-cem-mengu.mp3",
+      "expectedDurationSeconds": 4090.5665,
+      "durationToleranceSeconds": 0.1,
+      "expectedLanguage": "tr",
+      "minimumSegments": 50,
+      "analysisStyles": [
+        "meeting-analysis",
+        "oldskool-operational-analysis"
+      ]
+    }
+  ]
+}

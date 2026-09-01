@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <style>
+      .box{fill:#fff;stroke:#111;stroke-width:2;rx:16}.t{font:24px system-ui,sans-serif;fill:#111}.s{font:18px system-ui,sans-serif;fill:#333}.a{stroke:#111;stroke-width:2;marker-end:url(#m)}
+    </style>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+  </defs>
+  <text x="600" y="48" text-anchor="middle" class="t">Agent-Native Application Architecture</text>
+  <rect x="410" y="80" width="380" height="90" class="box"/><text x="600" y="120" text-anchor="middle" class="t">Human</text><text x="600" y="150" text-anchor="middle" class="s">text · voice · direct manipulation</text>
+  <line x1="600" y1="170" x2="600" y2="215" class="a"/>
+  <rect x="260" y="220" width="680" height="110" class="box"/><text x="600" y="260" text-anchor="middle" class="t">Intent + Interaction Layer</text><text x="600" y="292" text-anchor="middle" class="s">conversation · fixed UI · generated UI · workspace</text>
+  <line x1="600" y1="330" x2="600" y2="375" class="a"/>
+  <rect x="350" y="380" width="500" height="100" class="box"/><text x="600" y="420" text-anchor="middle" class="t">Agent / Orchestrator</text><text x="600" y="452" text-anchor="middle" class="s">planning · routing · tools · approvals · runs</text>
+  <line x1="440" y1="480" x2="250" y2="540" class="a"/><line x1="600" y1="480" x2="600" y2="540" class="a"/><line x1="760" y1="480" x2="950" y2="540" class="a"/>
+  <rect x="70" y="545" width="340" height="105" class="box"/><text x="240" y="585" text-anchor="middle" class="t">Capabilities / Tools</text><text x="240" y="617" text-anchor="middle" class="s">MCP · APIs · services</text>
+  <rect x="430" y="545" width="340" height="105" class="box"/><text x="600" y="585" text-anchor="middle" class="t">Shared State</text><text x="600" y="617" text-anchor="middle" class="s">domain · task · approval · artifact</text>
+  <rect x="790" y="545" width="340" height="105" class="box"/><text x="960" y="585" text-anchor="middle" class="t">Other Agents</text><text x="960" y="617" text-anchor="middle" class="s">A2A or equivalent delegation</text>
+  <line x1="600" y1="650" x2="600" y2="700" class="a"/><text x="600" y="735" text-anchor="middle" class="s">Authoritative application/domain state remains the source of truth.</text>
+</svg>

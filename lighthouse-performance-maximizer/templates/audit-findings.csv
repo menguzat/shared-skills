@@ -1,0 +1,2 @@
+issue_id,title,route_device,metrics,root_cause,impact,effort,confidence,reach,business_importance,reproducibility,regression_risk,priority_bucket,priority_score,proposed_fix,validation,notes
+PERF-001,,,,,1,1,1,1,1,1,1,,,,,

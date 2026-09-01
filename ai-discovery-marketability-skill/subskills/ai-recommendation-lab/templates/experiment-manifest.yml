@@ -1,0 +1,21 @@
+experiment_id: EXP-YYYYMMDD-001
+date: ""
+timezone: ""
+target:
+  brand: ""
+  products: []
+competitors: []
+engines: []
+search_conditions: []
+query_families: []
+repetitions_per_condition: 5
+random_seed: 42
+predefined_outcomes:
+  - retrieved
+  - cited
+  - mentioned
+  - recommended
+  - recommendation_position
+  - factual_accuracy
+stop_rule: "complete all planned runs"
+notes: ""

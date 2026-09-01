@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publication Designer"
+  short_description: "Design verified, pixel-perfect fixed-page PDFs"
+  default_prompt: "Use $publication-designer to turn this source into a professionally designed, visually audited, pixel-perfect fixed-page PDF."

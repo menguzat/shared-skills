@@ -1,0 +1,13 @@
+# EXAMPLE ONLY — decide crawler policy deliberately and verify current official docs.
+User-agent: *
+Allow: /
+
+# Example: allow OpenAI search discovery.
+User-agent: OAI-SearchBot
+Allow: /
+
+# Training policy is a separate business decision.
+# User-agent: GPTBot
+# Disallow: /
+
+Sitemap: https://example.com/sitemap.xml

@@ -1,0 +1,66 @@
+:root {
+  --page-gutter: 1rem;
+  --tap-min: 2.75rem;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.app-shell {
+  min-block-size: 100svh;
+  min-block-size: 100dvh;
+}
+
+.page {
+  inline-size: min(100%, 80rem);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.tap-target {
+  min-inline-size: var(--tap-min);
+  min-block-size: var(--tap-min);
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.mobile-primary-nav {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding-block-end: env(safe-area-inset-bottom, 0px);
+}
+
+/* Architecture changes when there is enough room, not by device name. */
+@media (min-width: 52.5rem) {
+  :root { --page-gutter: 1.5rem; }
+
+  .desktop-nav { display: block; }
+  .mobile-primary-nav { display: none; }
+  .page { padding-bottom: 2rem; }
+}
+
+/* Hover is an enhancement. */
+@media (hover: hover) and (pointer: fine) {
+  .hover-enhanced .secondary-actions { opacity: 0; }
+  .hover-enhanced:hover .secondary-actions,
+  .hover-enhanced:focus-within .secondary-actions { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

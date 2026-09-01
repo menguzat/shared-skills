@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <style>.r{fill:#fff;stroke:#111;stroke-width:2;rx:14}.h{font:24px system-ui,sans-serif}.p{font:18px system-ui,sans-serif;fill:#333}</style>
+  <text x="600" y="46" text-anchor="middle" class="h">Progressive Surface Complexity</text>
+  <g transform="translate(70,90)">
+    <rect x="0" y="420" width="140" height="80" class="r"/><text x="70" y="455" text-anchor="middle" class="h">Text</text>
+    <rect x="155" y="350" width="140" height="150" class="r"/><text x="225" y="390" text-anchor="middle" class="h">Action</text><text x="225" y="420" text-anchor="middle" class="p">chip/button</text>
+    <rect x="310" y="290" width="140" height="210" class="r"/><text x="380" y="330" text-anchor="middle" class="h">Card</text><text x="380" y="360" text-anchor="middle" class="p">glanceable</text>
+    <rect x="465" y="220" width="140" height="280" class="r"/><text x="535" y="260" text-anchor="middle" class="h">Surface</text><text x="535" y="290" text-anchor="middle" class="p">form/table/map</text>
+    <rect x="620" y="145" width="140" height="355" class="r"/><text x="690" y="185" text-anchor="middle" class="h">Workspace</text><text x="690" y="215" text-anchor="middle" class="p">side-by-side</text>
+    <rect x="775" y="75" width="140" height="425" class="r"/><text x="845" y="115" text-anchor="middle" class="h">Artifact</text><text x="845" y="145" text-anchor="middle" class="p">persistent</text>
+    <rect x="930" y="0" width="140" height="500" class="r"/><text x="1000" y="40" text-anchor="middle" class="h">Custom App</text><text x="1000" y="70" text-anchor="middle" class="p">sandboxed</text>
+  </g>
+  <text x="600" y="600" text-anchor="middle" class="p">Use the smallest surface that materially improves perception, manipulation, or control.</text>
+</svg>

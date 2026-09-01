@@ -1,0 +1,2 @@
+route_id,url,template_family,business_priority,render_mode,auth_required,media_heavy,js_heavy,mobile_test,desktop_test,notes
+home,/,landing,high,unknown,false,true,medium,true,true,

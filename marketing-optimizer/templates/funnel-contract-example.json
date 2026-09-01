@@ -1,0 +1,46 @@
+{
+  "$schema": "./funnel-contract.schema.json",
+  "funnelId": "lyf-oldskool-made-to-order-pdp",
+  "productModel": "made-to-order",
+  "brandPositioning": "artisanal-luxury",
+  "metrics": {
+    "targetConversionRate": 0.025,
+    "maxBounceRate": 0.35
+  },
+  "viewports": [
+    { "name": "mobile", "width": 390, "height": 844 },
+    { "name": "desktop", "width": 1440, "height": 900 }
+  ],
+  "technicalThresholds": {
+    "maxPageSizeBytes": 2500000,
+    "maxImageDimensionPx": 2048,
+    "maxDomDepth": 32,
+    "minimumTapTargetPx": 44,
+    "minimumBodyFontSizePx": 16
+  },
+  "analytics": {
+    "requiredEvents": [
+      "view_landing_page",
+      "click_cta_primary",
+      "configure_size_options",
+      "complete_form_step"
+    ]
+  },
+  "editorialRules": {
+    "editorialMode": "Mod-1-Ikna-Donusum",
+    "forbiddenTerms": [
+      "delve",
+      "unlock",
+      "tapestry",
+      "seamless",
+      "revolutionary",
+      "cutting-edge",
+      "redefine",
+      "game-changing"
+    ],
+    "requiredEvidenceSections": [
+      "craftsmanship-gallery",
+      "pricing-transparency-block"
+    ]
+  }
+}

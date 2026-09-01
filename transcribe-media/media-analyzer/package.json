@@ -1,0 +1,30 @@
+{
+  "name": "@lyflab/media-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local media transcription and analysis CLI with reusable prompt styles.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bin": {
+    "media-analyzer": "./cli.ts"
+  },
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^2.0.1",
+    "better-sqlite3": "^12.4.6",
+    "commander": "^14.0.2",
+    "dotenv": "^17.2.3",
+    "file-type": "^21.1.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

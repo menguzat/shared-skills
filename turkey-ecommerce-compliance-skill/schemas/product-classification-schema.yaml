@@ -1,0 +1,53 @@
+product_id: ""
+url: ""
+name: ""
+brand: ""
+
+commercial_context:
+  seller_role: "manufacturer|importer|reseller|marketplace|unknown"
+  category_path: []
+  checkout_available: true
+
+physical_identity:
+  form: null
+  net_quantity: null
+  plant_species: []
+  plant_parts: []
+  extraction_or_process: []
+
+ingredients:
+  declared: []
+  inci: []
+  cannabinoids_declared: []
+  allergens_declared: []
+
+intended_use:
+  ingestion: false
+  skin_or_hair: false
+  room_fragrance: false
+  cleaning: false
+  pest_repellent: false
+  medical_or_health: false
+  textile_or_general_goods: false
+  other: null
+
+claims:
+  medical: []
+  health: []
+  cosmetic: []
+  antimicrobial: []
+  repellent: []
+  nutrition: []
+  environmental: []
+  organic: []
+  quality: []
+
+classification:
+  primary: "FOOD|FOOD_SUPPLEMENT|COSMETIC|HEMP_REGULATED_PRODUCT|AROMATHERAPEUTIC_PRODUCT|MEDICINAL_HERBAL_TEA|TEXTILE|DETERGENT|BIOCIDAL_PRODUCT|ROOM_FRAGRANCE_OR_CHEMICAL|GENERAL_CONSUMER_PRODUCT|UNKNOWN"
+  secondary: []
+  rationale: ""
+  confidence: "high|medium|low"
+  unresolved_questions: []
+
+required_documents_to_verify: []
+applicable_reference_modules: []

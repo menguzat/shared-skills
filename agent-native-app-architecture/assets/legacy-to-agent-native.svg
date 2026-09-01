@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111"/></marker></defs>
+  <style>.b{fill:#fff;stroke:#111;stroke-width:2;rx:14}.h{font:24px system-ui,sans-serif}.p{font:17px system-ui,sans-serif;fill:#333}.l{stroke:#111;stroke-width:2;marker-end:url(#arr)}</style>
+  <text x="300" y="45" text-anchor="middle" class="h">Legacy App</text><text x="900" y="45" text-anchor="middle" class="h">Agent-Native App</text>
+  <g transform="translate(80,90)">
+    <rect x="0" y="0" width="440" height="80" class="b"/><text x="220" y="48" text-anchor="middle" class="h">Navigation hierarchy</text>
+    <line x1="220" y1="80" x2="220" y2="120" class="l"/>
+    <rect x="0" y="125" width="440" height="80" class="b"/><text x="220" y="173" text-anchor="middle" class="h">Page + form</text>
+    <line x1="220" y1="205" x2="220" y2="245" class="l"/>
+    <rect x="0" y="250" width="440" height="80" class="b"/><text x="220" y="298" text-anchor="middle" class="h">Button / action</text>
+    <line x1="220" y1="330" x2="220" y2="370" class="l"/>
+    <rect x="0" y="375" width="440" height="80" class="b"/><text x="220" y="423" text-anchor="middle" class="h">Result / toast</text>
+  </g>
+  <g transform="translate(680,90)">
+    <rect x="0" y="0" width="440" height="80" class="b"/><text x="220" y="48" text-anchor="middle" class="h">Intent</text>
+    <line x1="220" y1="80" x2="220" y2="120" class="l"/>
+    <rect x="0" y="125" width="440" height="80" class="b"/><text x="220" y="165" text-anchor="middle" class="h">Capabilities + agent</text><text x="220" y="190" text-anchor="middle" class="p">read · prepare · execute</text>
+    <line x1="220" y1="205" x2="220" y2="245" class="l"/>
+    <rect x="0" y="250" width="440" height="80" class="b"/><text x="220" y="290" text-anchor="middle" class="h">Just-in-time surface</text><text x="220" y="315" text-anchor="middle" class="p">compare · edit · approve</text>
+    <line x1="220" y1="330" x2="220" y2="370" class="l"/>
+    <rect x="0" y="375" width="440" height="80" class="b"/><text x="220" y="415" text-anchor="middle" class="h">Verified shared state</text><text x="220" y="440" text-anchor="middle" class="p">recoverable · persistent when needed</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" class="p">Migration target: reduce navigation tax without sacrificing direct manipulation, predictability, or user control.</text>
+</svg>

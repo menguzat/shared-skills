@@ -1,0 +1,13 @@
+propositions:
+  - id: P001
+    claim: ""
+    importance: high
+    first_party_evidence: []
+    structured_representation: []
+    independent_evidence: []
+    customer_evidence: []
+    visual_evidence: []
+    freshness: null
+    contradictions: []
+    confidence: unknown
+    epistemic_class: INFERENCE

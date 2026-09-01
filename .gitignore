@@ -1,0 +1,36 @@
+# Environment & Secret Keys
+.env
+.env.*
+!.env.example
+*.env
+
+# Private Biometric Audio, Telemetry & Local Cache
+transcribe-media/data/
+*.wav
+*.m4a
+*.mp3
+*.opus
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+
+# Private Deployment Skills & Server Profiles
+deploy-first-app/
+deploy-update-app/
+
+# Private Project Skills & Custom Extensions
+goksen-post-uret/
+mengu-image-gen/
+publication-designer/scripts/render_goksen*
+transcribe-media/analysis-prompts/oldskool*
+transcribe-media/references/oldskool*
+transcribe-media/regression/baselines/oldskool*
+
+# System & Build Artifacts
+node_modules/
+dist/
+build/
+.DS_Store
+*.pyc
+__pycache__/
+.cache/

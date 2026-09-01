@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://publication-designer.local/publication-contract.schema.json",
+  "title": "Publication Designer contract",
+  "type": "object",
+  "required": ["format", "pageSelector", "expectedPages", "requiredFonts", "qa", "releaseFilename"],
+  "properties": {
+    "title": { "type": "string" },
+    "format": {
+      "type": "object",
+      "required": ["widthMm", "heightMm"],
+      "properties": {
+        "widthMm": { "type": "number", "exclusiveMinimum": 0 },
+        "heightMm": { "type": "number", "exclusiveMinimum": 0 },
+        "bleedMm": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "pageSelector": { "type": "string", "minLength": 1 },
+    "expectedPages": { "type": "integer", "minimum": 1 },
+    "rasterDpi": { "type": "number", "minimum": 72 },
+    "requiredFonts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["family", "weights"],
+        "properties": {
+          "family": { "type": "string" },
+          "weights": { "type": "array", "items": { "type": ["integer", "string"] }, "minItems": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requiredGlyphSets": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "revisionScope": {
+      "type": "object",
+      "required": ["allowedPages", "unchangedPagesMustMatch"],
+      "properties": {
+        "allowedPages": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "unchangedPagesMustMatch": { "type": "boolean" },
+        "baselineRun": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "layoutMode": { "enum": ["deterministic", "legacy"] },
+    "visualReview": {
+      "type": "object",
+      "properties": {
+        "language": { "type": "string", "minLength": 1 },
+        "invariants": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "textOnArtExceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "page", "copySelector", "artSelector", "safeZoneSelector", "reason", "reviewEvidence"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "page": { "type": "integer", "minimum": 1 },
+          "copySelector": { "type": "string", "minLength": 1 },
+          "artSelector": { "type": "string", "minLength": 1 },
+          "safeZoneSelector": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "reviewEvidence": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nonOverlapPairs": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          { "type": "string", "minLength": 1 },
+          { "type": "string", "minLength": 1 }
+        ],
+        "items": false,
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "visualCredits": {
+      "type": "object",
+      "required": ["inCaptions", "backMatter", "disclosureTextIncludes"],
+      "properties": {
+        "inCaptions": { "enum": ["forbidden", "allowed", "required"] },
+        "backMatter": { "enum": ["required", "optional"] },
+        "captionSelector": { "type": "string", "minLength": 1 },
+        "backMatterSelector": { "type": "string", "minLength": 1 },
+        "disclosureTextIncludes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "aiUsage": {
+      "type": "object",
+      "required": ["enabled", "ledger"],
+      "properties": {
+        "enabled": { "const": true },
+        "ledger": { "type": "string", "minLength": 1 },
+        "requirePriced": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["href"],
+            "properties": {
+              "href": { "type": "string" },
+              "text": { "type": "string" },
+              "textIncludes": { "type": "string" },
+              "page": { "type": "integer", "minimum": 1 },
+              "count": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "forbiddenTargets": { "type": "array", "items": { "type": "string" } },
+        "forbiddenVisibleText": { "type": "array", "items": { "type": "string" } },
+        "probe": { "type": "array", "items": { "type": "string" } },
+        "probeTimeoutMs": { "type": "integer", "minimum": 100 },
+        "probeMaxRedirects": { "type": "integer", "minimum": 0, "maximum": 10 }
+      },
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "requiredIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "requiredSourcePlacements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "page"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "page": { "type": "integer", "minimum": 1 },
+              "minVisibleCharacters": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "requireUniqueIds": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "selector": { "type": "string" },
+          "src": { "type": "string" },
+          "count": { "type": "integer", "minimum": 1 },
+          "minEffectiveDpi": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "typeRoles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "selector"],
+        "properties": {
+          "name": { "type": "string" },
+          "selector": { "type": "string" },
+          "required": { "type": "boolean" },
+          "minFontSizePx": { "type": "number" },
+          "maxFontSizePx": { "type": "number" },
+          "minLineHeight": { "type": "number" },
+          "maxMeasureCh": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "semanticRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": { "enum": ["min-font-size", "max-lines", "heading-balance", "no-overlap", "no-text-art-overlap", "min-gap", "min-bottom-clearance", "min-footer-gap", "min-contrast", "unique-text"] },
+          "selector": { "type": "string" },
+          "a": { "type": "string" },
+          "b": { "type": "string" },
+          "value": { "type": "number" },
+          "minLines": { "type": "number", "minimum": 1 },
+          "maxLines": { "type": "number", "minimum": 1 },
+          "minLastLineRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+          "maxLineWidthRatio": { "type": "number", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "designSystem": {
+      "type": "object",
+      "properties": {
+        "baseUnitPx": { "type": "number", "exclusiveMinimum": 0 },
+        "spacingScale": { "type": "array", "items": { "type": "number", "exclusiveMinimum": 0 }, "minItems": 2 },
+        "grid": {
+          "type": "object",
+          "properties": {
+            "columns": { "type": "integer", "minimum": 2 },
+            "minGutterPx": { "type": "number", "minimum": 0 },
+            "baselinePx": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "pageBudgets": {
+          "type": "object",
+          "properties": {
+            "minPurposefulWhitespaceRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+            "maxDominantFocalAreas": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "headlines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["selector"],
+            "properties": {
+              "selector": { "type": "string", "minLength": 1 },
+              "minLines": { "type": "number", "minimum": 1 },
+              "maxLines": { "type": "number", "minimum": 1 },
+              "minLastLineRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+              "maxLineWidthRatio": { "type": "number", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "qa": {
+      "type": "object",
+      "required": ["dimensionToleranceCssPx", "geometryDeltaPx", "structuralSsim"],
+      "properties": {
+        "dimensionToleranceCssPx": { "type": "number", "minimum": 0 },
+        "geometryDeltaPx": { "type": "number", "minimum": 0 },
+        "structuralSsim": { "type": "number", "minimum": 0, "maximum": 1 },
+        "requireSafeArea": { "type": "boolean" },
+        "checkSafeDescendants": { "type": "boolean" },
+        "requireImageAlt": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "pdf": {
+      "type": "object",
+      "properties": {
+        "mediaBoxTolerancePt": { "type": "number", "minimum": 0 },
+        "requireTagged": { "type": "boolean" },
+        "requireSubsetFonts": { "type": "boolean" },
+        "nativeCrosscheck": { "type": "boolean" },
+        "requireNativeCrosscheck": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "release": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "enum": ["distribution", "test"] },
+        "requireManualReview": { "type": "boolean" },
+        "reviewSpreads": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "editorialPreflight": {
+          "type": "object",
+          "properties": {
+            "required": { "type": "boolean" },
+            "path": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        "rebuildCapsule": {
+          "type": "object",
+          "properties": {
+            "required": { "type": "boolean" },
+            "includes": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "releaseFilename": { "type": "string", "pattern": "^[^/\\\\]+\\.pdf$" }
+  },
+  "allOf": [
+    {
+      "if": { "type": "object", "properties": { "release": { "type": "object", "properties": { "mode": { "const": "distribution" } }, "required": ["mode"] } }, "required": ["release"] },
+      "then": {
+        "required": ["layoutMode"],
+        "properties": {
+          "layoutMode": { "enum": ["deterministic", "legacy"] },
+          "release": {
+            "type": "object",
+            "required": ["editorialPreflight", "rebuildCapsule"],
+            "properties": {
+              "editorialPreflight": { "type": "object" },
+              "rebuildCapsule": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "type": "object", "properties": { "layoutMode": { "const": "deterministic" } }, "required": ["layoutMode"] },
+      "then": { "required": ["designSystem"], "properties": { "designSystem": { "type": "object" } } }
+    }
+  ],
+  "additionalProperties": true
+}

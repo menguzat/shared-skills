@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FunnelContract",
+  "description": "Schema for defining declarative quality, CRO, performance, and auditing rules for marketing funnels and web pages.",
+  "type": "object",
+  "properties": {
+    "funnelId": {
+      "type": "string",
+      "description": "Unique identifier for this funnel configuration"
+    },
+    "productModel": {
+      "type": "string",
+      "enum": ["limited-collection", "preorder", "made-to-order", "made-to-measure", "special-tailoring"],
+      "description": "The target commercial model of the funnel"
+    },
+    "brandPositioning": {
+      "type": "string",
+      "enum": ["premium", "luxury", "artisanal-luxury", "fashion-led", "technical-luxury", "hybrid"],
+      "description": "The brand's aesthetic and psychological positioning level"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "targetConversionRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "maxBounceRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": ["targetConversionRate"]
+    },
+    "viewports": {
+      "type": "array",
+      "description": "The device viewports to test for responsiveness and design safety",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "width": { "type": "integer", "minimum": 320 },
+          "height": { "type": "integer", "minimum": 480 }
+        },
+        "required": ["name", "width", "height"]
+      }
+    },
+    "technicalThresholds": {
+      "type": "object",
+      "properties": {
+        "maxPageSizeBytes": { "type": "integer", "minimum": 0 },
+        "maxImageDimensionPx": { "type": "integer", "minimum": 0 },
+        "maxDomDepth": { "type": "integer", "minimum": 1 },
+        "minimumTapTargetPx": { "type": "integer", "minimum": 1 },
+        "minimumBodyFontSizePx": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["minimumTapTargetPx", "minimumBodyFontSizePx"]
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "requiredEvents": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Analytics tracking events that must trigger during simulated user journeys"
+        }
+      },
+      "required": ["requiredEvents"]
+    },
+    "editorialRules": {
+      "type": "object",
+      "properties": {
+        "editorialMode": {
+          "type": "string",
+          "enum": ["Mod-1-Ikna-Donusum", "Mod-2-Egitici-Otorite", "Mod-3-Empati-Topluluk"]
+        },
+        "forbiddenTerms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "AI slop or manipulative terms that must be checked and banned from page text"
+        },
+        "requiredEvidenceSections": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Named elements or sections containing physical/process evidence (e.g. materials, patterns)"
+        }
+      },
+      "required": ["editorialMode", "forbiddenTerms"]
+    }
+  },
+  "required": ["funnelId", "productModel", "brandPositioning", "viewports", "technicalThresholds", "analytics", "editorialRules"]
+}

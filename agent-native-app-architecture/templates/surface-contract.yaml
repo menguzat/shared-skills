@@ -1,0 +1,24 @@
+surface:
+  id: example-surface
+  purpose: "What user decision or manipulation this surface supports"
+  task_id: "task-123"
+  type: "comparison|form|map|timeline|approval|workspace|custom"
+  persistence: "ephemeral|thread|project|durable"
+  state_bindings:
+    - path: "/constraints/budget"
+      mode: "read-write"
+  actions:
+    - id: "approve"
+      consequence: "external_write"
+      requires_confirmation: true
+  states:
+    loading: true
+    success: true
+    empty: true
+    error: true
+    cancelled: true
+  accessibility:
+    keyboard_complete: true
+    labels_required: true
+  fallback:
+    mode: "fixed_ui_or_text"

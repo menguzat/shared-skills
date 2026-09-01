@@ -1,0 +1,40 @@
+# Canonical structured finding
+finding_id: "MODULE-001"
+audit_date: "YYYY-MM-DD"
+url: "https://example.com/product"
+page_type: "product|category|checkout|policy|homepage|blog|other"
+product: null
+brand: null
+
+observed_evidence:
+  text: null
+  behavior: null
+  source: "website|operator_document|laboratory|official_registry|other"
+
+product_classification:
+  primary: "UNKNOWN"
+  secondary: []
+  confidence: "high|medium|low"
+
+finding_type: ""
+status: "PASS_VISIBLE|INFO_MISSING|DOCUMENT_REQUIRED|CLAIM_EVIDENCE_REQUIRED|LIKELY_VIOLATION|GRAY_ZONE|HUMAN_REVIEW_REQUIRED|PHARMACY_ONLY|PAYTR_RISK|OUT_OF_SCOPE"
+severity: "blocker|high|medium|low"
+confidence: "high|medium|low"
+
+legal_basis:
+  - source_id: ""
+    article: null
+    authority: null
+    verified_date: "YYYY-MM-DD"
+
+payment_policy_basis: []
+
+reason: ""
+required_evidence: []
+evidence_that_could_change_result: []
+recommended_action: ""
+
+notes:
+  transition_deadline: null
+  effective_date: null
+  human_review_reason: null

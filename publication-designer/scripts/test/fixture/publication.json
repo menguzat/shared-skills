@@ -1,0 +1,80 @@
+{
+  "title": "Publication Designer self-test",
+  "format": { "widthMm": 148, "heightMm": 210, "bleedMm": 0 },
+  "pageSelector": ".page",
+  "expectedPages": 2,
+  "layoutMode": "legacy",
+  "rasterDpi": 150,
+  "requiredFonts": [
+    { "family": "Manrope", "weights": [400, 800] }
+  ],
+  "requiredGlyphSets": {
+    "latin-basic": "Aa"
+  },
+  "aiUsage": {
+    "enabled": true,
+    "ledger": "usage/ai-calls.jsonl",
+    "requirePriced": false
+  },
+  "links": {
+    "required": [
+      { "href": "https://example.com/", "text": "example.com", "count": 1 }
+    ],
+    "forbiddenTargets": ["https://xample.com/"]
+  },
+  "content": {
+    "requiredIds": ["cover", "chapter-01"],
+    "requiredSourcePlacements": [
+      { "id": "cover-copy", "page": 1, "minVisibleCharacters": 40 },
+      { "id": "chapter-copy", "page": 2, "minVisibleCharacters": 40 }
+    ],
+    "requireUniqueIds": true
+  },
+  "assets": [
+    {
+      "id": "cover-figure",
+      "selector": "[data-asset-id=\"cover-figure\"]",
+      "src": "/assets/figure.svg",
+      "count": 1
+    }
+  ],
+  "typeRoles": [
+    {
+      "name": "body",
+      "selector": ".prose",
+      "minFontSizePx": 12,
+      "minLineHeight": 1.4,
+      "maxMeasureCh": 72
+    }
+  ],
+  "semanticRules": [
+    { "kind": "max-lines", "selector": "h1", "value": 3 },
+    { "kind": "max-lines", "selector": "h2", "value": 3 },
+    { "kind": "min-gap", "a": ".chapter-heading", "b": ".chapter-prose", "value": 20 },
+    { "kind": "min-bottom-clearance", "selector": ".folio", "value": 20 },
+    { "kind": "min-contrast", "selector": ".prose", "value": 4.5 },
+    { "kind": "unique-text", "selector": "h1, h2" }
+  ],
+  "qa": {
+    "dimensionToleranceCssPx": 0.5,
+    "geometryDeltaPx": 2,
+    "structuralSsim": 0.975,
+    "requireSafeArea": true,
+    "checkSafeDescendants": true,
+    "requireImageAlt": true
+  },
+  "pdf": {
+    "mediaBoxTolerancePt": 0.5,
+    "requireTagged": true,
+    "requireSubsetFonts": true,
+    "nativeCrosscheck": true
+  },
+  "release": {
+    "mode": "distribution",
+    "requireManualReview": true,
+    "reviewSpreads": ["1-2"],
+    "editorialPreflight": { "required": false },
+    "rebuildCapsule": { "required": false }
+  },
+  "releaseFilename": "publication-designer-self-test.pdf"
+}

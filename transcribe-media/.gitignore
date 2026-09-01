@@ -1,0 +1,6 @@
+.env
+data/
+media-analyzer/node_modules/
+media-analyzer/dist/
+*.analysis.md
+*.analysis.json

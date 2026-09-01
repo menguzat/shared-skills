@@ -1,0 +1,14 @@
+{
+  "intent_first_access": 0,
+  "capability_clarity": 0,
+  "shared_state": 0,
+  "surface_selection": 0,
+  "direct_manipulation_parity": 0,
+  "human_control": 0,
+  "recovery_undo": 0,
+  "progress_observability": 0,
+  "multimodal_continuity": 0,
+  "accessibility_consistency": 0,
+  "security_permissions": 0,
+  "evaluation_telemetry": 0
+}

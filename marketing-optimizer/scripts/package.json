@@ -1,0 +1,14 @@
+{
+  "name": "@lyflab/marketing-optimizer-scripts",
+  "version": "1.0.0",
+  "description": "Automated preflight and critique scripts for premium web pages",
+  "type": "module",
+  "main": "funnel-preflight.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@google/genai": "^0.10.0",
+    "playwright": "^1.45.0"
+  }
+}
