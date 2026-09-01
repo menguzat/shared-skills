@@ -1,0 +1,9 @@
+{
+  "name": "frontend-experience",
+  "version": "1.0.0",
+  "description": "Frontend architecture, test-driven development, mobile UX, and Core Web Vitals optimization.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

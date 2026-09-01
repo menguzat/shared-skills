@@ -1,0 +1,9 @@
+{
+  "name": "brand-generative-media",
+  "version": "1.0.0",
+  "description": "Brand guidelines, image synthesis, and Veo/Kling e-commerce product video generation.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

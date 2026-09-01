@@ -1,0 +1,9 @@
+{
+  "name": "conductor-governance",
+  "version": "1.0.0",
+  "description": "Conductor hierarchical track lifecycle, session handoffs, security scanning, and deployment operations.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

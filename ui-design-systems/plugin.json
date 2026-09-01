@@ -1,0 +1,9 @@
+{
+  "name": "ui-design-systems",
+  "version": "1.0.0",
+  "description": "Curated visual language design systems (Editorial, Swiss Brutalist, Agency High-End, Minimalist, Stitch).",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "media-intelligence-docs",
+  "version": "1.0.0",
+  "description": "Audio/video transcription studio, publication design, structural typesetting, and document intelligence.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

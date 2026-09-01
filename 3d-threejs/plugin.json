@@ -1,0 +1,9 @@
+{
+  "name": "3d-threejs",
+  "version": "1.0.0",
+  "description": "Production procedural 3D graphics, shaders, and WebGPU/TSL pipelines for Three.js.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}

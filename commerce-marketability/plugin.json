@@ -1,0 +1,9 @@
+{
+  "name": "commerce-marketability",
+  "version": "1.0.0",
+  "description": "AI entity discovery, retrieval optimization, conversion funnels, and Turkish e-commerce compliance.",
+  "author": {
+    "name": "lyflab"
+  },
+  "license": "MIT"
+}
