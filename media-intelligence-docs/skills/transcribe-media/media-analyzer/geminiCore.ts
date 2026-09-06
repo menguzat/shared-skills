@@ -105,7 +105,7 @@ async function buildParts(options: GeminiAnalyzeOptions, model: string): Promise
       speakerInstructions.push(desc);
       if (ref) {
         refParts.push({ text: `[Voice Sample Attachment for "${speaker.name}"]` });
-        refParts.push(ref.inlineData);
+        refParts.push({ inlineData: ref.inlineData });
       }
     }
     speakerInstructions.push("SPEAKER IDENTIFICATION RULE: Compare the vocal timbre, pitch, cadence, and gender of speakers in the target recording against the reference voice samples above. Assign exact speaker names (e.g., 'Mengü', 'Cem', 'Dilan') to transcription segments instead of generic 'Speaker 1' or 'Speaker 2'. Use descriptive gender/role titles for unknown speakers.");

@@ -41,6 +41,10 @@ Before styling, create:
   preflight policy, AI-usage ledger, source-to-page/text-presence mappings, and
   any domain-specific content mappings.
 - `asset-manifest.json` (Generative Save State): A persistent ledger required for any project using generated visuals/assets. It must map every asset path to the exact prompt, seed, model parameters, reference images, and generation tool used. This ensures future editability without losing production context.
+- `image-sources.json`: The equivalent ledger for web-sourced (not generated)
+  visuals — required for any project using real photography pulled from the
+  web. Read [references/web-image-sourcing.md](references/web-image-sourcing.md)
+  before sourcing a single candidate.
 - Structured content such as `content.js` or JSON: explicit page/template
   assignments and stable content IDs. Keep the original source canonical.
 - `docs/art-direction.md`: audience, concept, typography, grid, spacing system,
@@ -180,6 +184,18 @@ materially different work.
 When generating visuals (using tools like `generate_image` or `mengu-image-gen`), act as an Art Director and Cinematographer. 
 - **Her karenin teknik detayını belirle:** Do not write generic prompts. Explicitly specify the lighting (e.g., "warm studio lighting", "dramatic chiaroscuro", "golden hour"), color grading (e.g., "muted tones", "Kodak Portra 400"), lens choice / focal length (e.g., "50mm lens", "macro photography", "wide angle"), and camera style.
 - **Gerçekçilik Şartı:** Unless the brief specifically asks for a 3D render, diagram, or illustration, all generated images MUST be photorealistic ("gerçek fotoğraf"). Avoid overly polished 3D or "AI-looking" digital art styles.
+
+### Web-sourced imagery instead of generation
+
+Not every `editorial`/`background` slot needs a generated image. When a real
+photograph fits better — or the brief already supplies finished copy and only
+needs matching imagery — search, download, and vet candidates from the web
+instead of prompting an image model. Search the repo's shared
+`image-pool/` first for a reusable, already-licensed match before sourcing
+anything new. Read
+[references/web-image-sourcing.md](references/web-image-sourcing.md) for the
+full search → vet → place → pool workflow, including the license-verification
+bar a candidate must clear before it can be used or pooled.
 
 ## Metin Yazarlığı ve Editoryal Çerçeve (Copywriting Decision Tree)
 
