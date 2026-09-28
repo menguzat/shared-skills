@@ -40,3 +40,11 @@ build/
 *.pyc
 __pycache__/
 .cache/
+.venv/
+.venv*/
+**/.venv*/
+venv/
+**/venv*/
+*.zip
+*.tar.gz
+*.tgz
